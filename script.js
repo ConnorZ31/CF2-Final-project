@@ -21,9 +21,7 @@ function generateArray(size = 100) {
   return arr;
 }
 
-// --------------------
-// Bubble Sort (step recorder)
-// --------------------
+
 function bubbleSort(arr) {
   const a = [...arr];
   const steps = [];
@@ -42,9 +40,7 @@ function bubbleSort(arr) {
   return steps;
 }
 
-// --------------------
-// Insertion Sort (step recorder)
-// --------------------
+
 function insertionSort(arr) {
   const a = [...arr];
   const steps = [];
@@ -69,9 +65,6 @@ function insertionSort(arr) {
   return steps;
 }
 
-// --------------------
-// Draw function
-// --------------------
 function draw(highlight = []) {
   if (!ctx) return;
 
@@ -99,9 +92,6 @@ function draw(highlight = []) {
   });
 }
 
-// --------------------
-// Apply step
-// --------------------
 function applyStep(step) {
   if (!step) return;
 
@@ -114,9 +104,7 @@ function applyStep(step) {
   draw(highlight);
 }
 
-// --------------------
-// Animation loop (slowed)
-// --------------------
+
 function animate() {
   if (!running) return;
 
@@ -138,14 +126,6 @@ function animate() {
   }, 1);
 }
 
-// --------------------
-// Controls
-// --------------------
-function start() {
-  if (running) return;
-  running = true;
-  animate();
-}
 
 function reset() {
   array = generateArray(100);
@@ -171,3 +151,18 @@ window.reset = reset;
 window.onload = () => {
   reset();
 };
+
+
+function start() {
+  const algo = document.getElementById("algorithm").value;
+
+  // If bogo is selected → just reshuffle once
+  if (algo === "bogo") {
+    reset();
+    return;
+  }
+
+  if (running) return;
+  running = true;
+  animate();
+}
