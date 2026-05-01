@@ -1,27 +1,34 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Sorting Visualizer</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1> Sorting Visualizer</h1>
+
+  <h1>Sorting Visualizer</h1>
+
 <canvas id="canvas" width="800" height="400"></canvas>
-    <div class="controls">
+
+  <div class="controls">
     <select id="algorithm">
-      <option>Bubble Sort</option>
-      <option>Insertion Sort</option>
+      <option value="bubble">Bubble Sort</option>
+      <option value="insertion">Insertion Sort</option>
     </select>
 
-
-
-
+```
 <button onclick="reset()">Reset</button>
 <button onclick="start()">Start</button>
-
+```
 
   </div>
+
+  <script src="script.js" defer></script>
+
 </body>
 </html>
-<link rel="stylesheet" href="style.css">
